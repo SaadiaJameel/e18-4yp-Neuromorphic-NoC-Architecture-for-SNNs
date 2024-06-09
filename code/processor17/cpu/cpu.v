@@ -58,7 +58,9 @@ module cpu (
     wire [31:0] EX_PC, EX_IMMEDIATE, EX_REG_DATA1, EX_REG_DATA2,
                 EX_FREG_DATA1, EX_FREG_DATA2, EX_FREG_DATA3,
                 EX_OP1_FWD_MUX_OUT, EX_OP2_FWD_MUX_OUT, 
-                EX_ALU_DATA1, EX_ALU_DATA2, EX_ALU_OUT;
+                EX_ALU_DATA1, EX_ALU_DATA2, EX_ALU_OUT,
+                EX_FPU_DATA1, EX_FPU_DATA2, EX_FPU_DATA3,
+                EX_FPU_OUT;
     wire [5:0] EX_ALU_SELECT;
     wire [4:0] EX_FPU_SELECT;
     wire [4:0] EX_REG_WRITE_ADDR, EX_REG_READ_ADDR1, EX_REG_READ_ADDR2, EX_REG_READ_ADDR3;
@@ -159,7 +161,7 @@ module cpu (
         EX_DATA_MEM_WRITE_DATA_SELECT, EX_DATA_MEM_WRITE, EX_DATA_MEM_READ,
         EX_BRANCH_CTRL, EX_WB_VALUE_SELECT
     );
-
+ 
 
     /****************************************** EX stage ******************************************/
     // ALU operand forwarding muxes
